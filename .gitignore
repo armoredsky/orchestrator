@@ -1,0 +1,14 @@
+*.swp
+build
+.gradle
+*.iws
+mb
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dataSources*
+.idea/misc.xml
+*.log
+vars.sh
+client/coverage
+client/.nyc_output
+.DS_Store
