@@ -1,0 +1,240 @@
+import com.sysco.uom.common_build.TimingsListener
+import com.sysco.uom.ftest.StartAppInBackground
+import com.sysco.uom.ftest.StopBackgroundApp
+import com.sysco.uom.mountebank.CreateImposters
+
+plugins {
+    id 'groovy'
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+    id 'codenarc'
+    id 'application'
+    id 'idea'
+    id 'org.flywaydb.flyway' version '4.0'
+    id 'org.sonarqube' version '2.0.1'
+    id "org.ndrwdn.mountebank" version "0.0.2"
+}
+
+apply plugin: 'org.sonarqube'
+apply plugin: "jacoco"
+
+repositories {
+    mavenCentral()
+}
+
+// ***************** Dependencies ********************* //
+
+sourceSets {
+    integrationTest {
+        groovy {
+            srcDir 'src/integrationTest/groovy'
+        }
+    }
+
+    functionalTest {
+        groovy {
+            srcDir 'src/functionalTest/groovy'
+        }
+    }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.5'
+    compile 'io.dropwizard:dropwizard-core:0.9.3'
+    compile 'io.dropwizard:dropwizard-assets:0.9.3'
+    compile 'io.dropwizard:dropwizard-jdbi:0.9.3'
+    compile 'org.postgresql:postgresql:9.4.1208'
+    compile 'com.google.inject:guice:4.1.0'
+    compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+    compile 'org.antlr:stringtemplate:3.2.1' // Needed for @UseStringTemplate3StatementLocator for JDBI @BindIn
+
+    testCompile 'io.dropwizard:dropwizard-testing:0.9.3'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'cglib:cglib-nodep:3.2.0'
+    testCompile 'org.objenesis:objenesis:1.2'
+
+    integrationTestCompile sourceSets.main.output
+    integrationTestCompile configurations.testCompile
+    integrationTestCompile sourceSets.test.output
+    integrationTestCompile configurations.testRuntime
+
+    functionalTestCompile sourceSets.main.output
+    functionalTestCompile configurations.testCompile
+    functionalTestCompile sourceSets.test.output
+    functionalTestCompile configurations.testRuntime
+    functionalTestCompile 'io.rest-assured:json-path:3.0.0'
+    functionalTestCompile 'io.rest-assured:rest-assured:3.0.0'
+    functionalTestCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+    functionalTestCompile 'org.mbtest.javabank:javabank-client:0.4.7'
+}
+
+// ***************** End Dependencies ********************* //
+
+// ***************** Properties *************************** //
+
+ext {
+    background = [:]
+
+    host = System.getenv('HOST') ?: getIpAddress()
+    port = System.getenv('PORT') ?: '8880'
+    adminPort = System.getenv('ADMIN_PORT') ?: '8881'
+}
+
+
+def getIpAddress() {
+    String ipAddress = 'localhost'
+    NetworkInterface.getNetworkInterfaces().each { iface ->
+        if (iface.name == 'eno1' || iface.name == 'eth0') {
+            iface.inetAddresses.each { addr ->
+                if (addr.hostAddress =~ /\d+\.\d+\.\d+\.\d+/) {
+                    ipAddress = addr.hostAddress
+                }
+            }
+        }
+    }
+    ipAddress
+}
+
+// ***************** Properties *************************** //
+
+codenarc {
+    configFile file("${projectDir}/codenarc.groovy")
+}
+
+jacoco {
+    toolVersion = '0.7.5.201505241946'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.host.url", "http://10.239.251.165:9000/"
+        property "sonar.jdbc.driverClassName", "org.postgresql.Driver"
+        property "sonar.projectName", "uom-desktop"
+        property "sonar.language", "grvy"
+        property "sonar.projectKey", "uom-desktop"
+        property "sonar.groovy.jacoco.itReportPath", "$buildDir/jacoco/integrationTest.exec"
+        property "sonar.groovy.jacoco.reportPath", "$buildDir/jacoco/test.exec"
+    }
+}
+
+idea {
+    module {
+        testSourceDirs += sourceSets.integrationTest.groovy.srcDirs
+        testSourceDirs += sourceSets.functionalTest.groovy.srcDirs
+
+        excludeDirs += file 'gradle'
+        excludeDirs += file 'build'
+        excludeDirs += file '.idea'
+    }
+}
+
+// ***************** Build and Run ********************* //
+
+mainClassName = 'com.sysco.uomorchestrator.UomOrchestratorApplication'
+
+shadowJar {
+    archiveName = 'UomOrchestratorApplication.jar'
+    mergeServiceFiles()
+}
+
+task runLocal << {
+    javaexec {
+        description 'Run the application locally for manual testing'
+        classpath = sourceSets.main.runtimeClasspath
+        main = mainClassName
+        args 'server', 'infrastructure/configuration.yml'
+    }
+}
+runLocal.dependsOn 'jar'
+
+task createImposters(type: CreateImposters) {
+    dependsOn 'startMountebank'
+    response = System.getenv('RESPONSE') ?: 'success'
+}
+
+task runLocalWithMountebank << {
+    javaexec {
+        description 'Run the application locally that connects to local stubs; set RESPONSE to "fail" to get a failure response when hitting the stubs'
+        classpath = sourceSets.main.runtimeClasspath
+        main = mainClassName
+        args 'server', 'infrastructure/configuration.yml'
+    }
+}
+runLocalWithMountebank.dependsOn 'createImposters', 'jar'
+runLocalWithMountebank.finalizedBy 'stopMountebank'
+
+task runFinalJar << {
+    exec {
+        commandLine 'java', '-jar', 'build/libs/UomOrchestratorApplication.jar', 'server', './infrastructure/configuration.yml'
+    }
+}
+
+// ***************** End Build and Run ********************* //
+
+// ***************** Test ********************* //
+
+def createStartBackgroundAppOnPortTask(String _port, String _adminPort) {
+    return tasks.create("startBackgroundAppOn${_port}", StartAppInBackground) {
+        mustRunAfter 'shadowJar'
+
+        host = "${project.host}"
+        port = _port
+        adminPort = _adminPort
+    }
+}
+createStartBackgroundAppOnPortTask("8880", "8881")
+createStartBackgroundAppOnPortTask("8890", "8891")
+
+task stopBackgroundApp(type: StopBackgroundApp) {}
+
+task integrationTest(type: Test) {
+    description 'Run the integration tests'
+    dependsOn 'codenarcIntegrationTest'
+
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+task('functionalTest-local', type: Test) {
+    description 'Run the functional tests'
+    dependsOn 'shadowJar', 'startBackgroundAppOn8090', 'codenarcFunctionalTest', 'startMountebank'
+    finalizedBy 'stopBackgroundApp', 'stopMountebank'
+    mustRunAfter 'integrationTest', 'startBackgroundAppOn8090'
+
+    // Don't collide with local app when starting the background one, so put it on a different port
+    environment('PORT', '8090')
+    environment('ADMIN_PORT', '8091')
+
+    testClassesDir = sourceSets.functionalTest.output.classesDir
+    classpath = sourceSets.functionalTest.runtimeClasspath
+}
+
+task('functionalTest-ci', type: Test) {
+    description 'Run the functional tests'
+    dependsOn 'startBackgroundAppOn8080', 'codenarcFunctionalTest'
+    finalizedBy 'stopBackgroundApp'
+    mustRunAfter 'startBackgroundAppOn8080'
+
+    environment('PORT', "${project.port}")
+    environment('ADMIN_PORT', "${project.adminPort}")
+
+    testClassesDir = sourceSets.functionalTest.output.classesDir
+    classpath = sourceSets.functionalTest.runtimeClasspath
+}
+
+task runAll {
+    dependsOn 'uiRunAll',
+        'test', 'integrationTest', 'functionalTest-local',
+        'codenarcMain', 'codenarcTest', 'codenarcIntegrationTest', 'codenarcFunctionalTest'
+}
+
+// ***************** End Test ********************* //
+
+gradle.addListener new TimingsListener()

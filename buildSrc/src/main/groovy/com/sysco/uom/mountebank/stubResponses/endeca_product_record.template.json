@@ -1,0 +1,94 @@
+{
+  "@class": "com.endeca.infront.cartridge.model.Record",
+  "detailsAction": {
+    "@class": "com.endeca.infront.cartridge.model.RecordAction",
+    "siteState": {
+      "@class": "com.endeca.infront.site.model.SiteState",
+      "contentPath": "\/browse",
+      "siteId": "\/sysco",
+      "properties": {}
+    },
+    "recordState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&Opco=010&R=010_0785127&Service=true"
+  },
+  "numRecords": 0,
+  "attributes": {
+    "isSoldAs_split": [
+      "false"
+    ],
+    "isAvailable": [
+      "true"
+    ],
+    "pBrand": [
+      "%BRAND%"
+    ],
+    "category_label": [
+      "OYSTERS BREADED"
+    ],
+    "isCatchWeight": [
+      "false"
+    ],
+    "flags": [
+      "Non-SyscoBranded"
+    ],
+    "description": [
+      "Oysters Breaded Homestyle Chinese"
+    ],
+    "category_completeCategoryId": [
+      "012048009"
+    ],
+    "type": [
+      "sysco"
+    ],
+    "replacementMaterialId": [
+      "0785127"
+    ],
+    "P_ID": [
+      "010_0785127"
+    ],
+    "category_mainCategoryId": [
+      "04"
+    ],
+    "opCo": [
+      "010"
+    ],
+    "split_max": [
+      "0"
+    ],
+    "storageFlag": [
+      "F"
+    ],
+    "averageWeightPerCase": [
+      "10.0000"
+    ],
+    "isSoldAs_case": [
+      "true"
+    ],
+    "materialId": [
+      "%SUPC%"
+    ],
+    "packSize_pack": [
+      "%PACK%"
+    ],
+    "canBuy": [
+      "true"
+    ],
+    "packSize_uom": [
+      "CS or EA"
+    ],
+    "isOrderable": [
+      "true"
+    ],
+    "split_min": [
+      "0"
+    ],
+    "packSize_size": [
+      "%SIZE%"
+    ],
+    "name": [
+      "%NAME%"
+    ],
+    "hasReplacement": [
+      "false"
+    ]
+  }
+}

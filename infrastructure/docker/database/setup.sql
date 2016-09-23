@@ -1,0 +1,1 @@
+ALTER ROLE uom WITH LOGIN;

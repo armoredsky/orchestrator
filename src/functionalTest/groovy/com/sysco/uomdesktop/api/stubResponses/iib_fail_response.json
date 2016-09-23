@@ -1,0 +1,19 @@
+{
+  "Acknowledgement": {
+    "ValidationResult": {
+      "RequestStatus": "Fail",
+      "TotalNoOrders": 1,
+      "SuccessfulOrders": 0,
+      "RequestTrackerID": "UOM-DT-ca1871da-a96e-41f3-b12f-5585145dcc9d"
+    },
+    "FailedOrderDetails": {
+      "Order": {
+        "errorField1": "Order/Header/CustomerNo",
+        "errorMessage1": "Length of field is not as per design specification",
+        "errorField2": "Order/Header/UOMOrderNo",
+        "errorMessage2": "Length of field is not as per design specification",
+        "UOMOrderNo": 434343434343
+      }
+    }
+  }
+}

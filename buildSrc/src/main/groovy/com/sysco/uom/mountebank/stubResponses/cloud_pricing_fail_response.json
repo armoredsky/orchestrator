@@ -1,0 +1,10 @@
+{
+  "customerAccount": null,
+  "requestStatuses": [
+    {
+      "code": 107,
+      "message": "Price request date is too far into the future"
+    }
+  ],
+  "products": []
+}

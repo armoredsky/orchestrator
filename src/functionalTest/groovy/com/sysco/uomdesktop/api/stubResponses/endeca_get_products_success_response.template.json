@@ -1,0 +1,878 @@
+{
+  "@type": "TwoColumnPage",
+  "endeca:auditInfo": {
+    "ecr:resourcePath": "\/pages\/sysco\/browse"
+  },
+  "name": "Two-Column Page",
+  "title": "Sysco|Product Search",
+  "metaKeywords": "food foods sysco branded",
+  "metaDescription": "Sysco Product Search Endeca Application",
+  "headerContent": [
+    {
+      "@type": "SearchBox",
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "headerContent[0]"
+      },
+      "name": "Search Box",
+      "contentPaths": [
+        "\/content\/Shared"
+      ],
+      "templateTypes": [
+        "AutoSuggestPanel"
+      ],
+      "templateIds": [],
+      "minAutoSuggestInputLength": "1",
+      "ruleLimit": "1"
+    }
+  ],
+  "secondaryContent": [
+    {
+      "@type": "Breadcrumbs",
+      "rangeFilterCrumbs": [],
+      "searchCrumbs": [],
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "secondaryContent[0]"
+      },
+      "name": "Breadcrumbs",
+      "removeAllAction": {
+        "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+        "contentPath": "\/browse",
+        "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&Opco=010&Service=true",
+        "siteRootPath": "\/pages",
+        "siteState": {
+          "@class": "com.endeca.infront.site.model.SiteState",
+          "contentPath": "\/browse",
+          "siteId": "\/sysco",
+          "properties": {}
+        }
+      },
+      "refinementCrumbs": []
+    },
+    {
+      "@type": "GuidedNavigation",
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "secondaryContent[1]"
+      },
+      "name": "Navigation Container",
+      "navigation": [
+        {
+          "@type": "RefinementMenu",
+          "moreLink": {
+            "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+            "contentPath": "\/browse",
+            "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0&Nrpp=100&Opco=010&Service=true&showMoreIds=1",
+            "siteRootPath": "\/pages",
+            "siteState": {
+              "@class": "com.endeca.infront.site.model.SiteState",
+              "contentPath": "\/browse",
+              "siteId": "\/sysco",
+              "properties": {}
+            },
+            "label": "Show More Refinements..."
+          },
+          "displayName": "Brand",
+          "endeca:auditInfo": {
+            "ecr:resourcePath": "\/pages\/sysco\/browse",
+            "ecr:innerPath": "secondaryContent[1]\/navigation[0]"
+          },
+          "name": "Brand",
+          "ancestors": [],
+          "dimensionName": "Brand",
+          "multiSelect": true,
+          "refinements": [
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294960196&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "1 CHZ",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294953902&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 3,
+              "label": "100%ITL",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294954810&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "1000SL",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294954229&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "1950",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294964534&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 58,
+              "label": "1PO2PO",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294962242&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 16,
+              "label": "1REPBLC",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294952230&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "1ST CLS",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294951347&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 6,
+              "label": "1STCHCE",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294966464&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 315,
+              "label": "2LVSBUD",
+              "properties": {},
+              "multiSelect": true
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294961470&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 51,
+              "label": "2SICILY",
+              "properties": {},
+              "multiSelect": true
+            }
+          ]
+        },
+        {
+          "@type": "RefinementMenu",
+          "displayName": "Category",
+          "endeca:auditInfo": {
+            "ecr:resourcePath": "\/pages\/sysco\/browse",
+            "ecr:innerPath": "secondaryContent[1]\/navigation[1]"
+          },
+          "name": "Category",
+          "ancestors": [],
+          "dimensionName": "Category",
+          "multiSelect": false,
+          "refinements": [
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+1000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 6977,
+              "label": "HLTHCAR\/HOSPLTY",
+              "properties": {
+                "DGraph.Strata": "12"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+2000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 25198,
+              "label": "DAIRY PRODUCTS",
+              "properties": {
+                "DGraph.Strata": "11"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+3000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 41274,
+              "label": "MEATS",
+              "properties": {
+                "DGraph.Strata": "10"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 17892,
+              "label": "SEAFOOD",
+              "properties": {
+                "DGraph.Strata": "9"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+5000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 13027,
+              "label": "POULTRY",
+              "properties": {
+                "DGraph.Strata": "8"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+6000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 44943,
+              "label": "FROZEN",
+              "properties": {
+                "DGraph.Strata": "7"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+7000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 133891,
+              "label": "CANNED AND DRY",
+              "properties": {
+                "DGraph.Strata": "6"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+8000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 51952,
+              "label": "PAPER &amp; DISP",
+              "properties": {
+                "DGraph.Strata": "5"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+9000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 5361,
+              "label": "CHEMICAL\/JANTRL",
+              "properties": {
+                "DGraph.Strata": "4"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+10000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 67622,
+              "label": "SUPP &amp; EQUIP",
+              "properties": {
+                "DGraph.Strata": "3"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+11000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 10049,
+              "label": "PRODUCE",
+              "properties": {
+                "DGraph.Strata": "2"
+              },
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+12000000&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 8986,
+              "label": "DISPENSER BEVRG",
+              "properties": {
+                "DGraph.Strata": "1"
+              },
+              "multiSelect": false
+            }
+          ]
+        },
+        {
+          "@type": "RefinementMenu",
+          "displayName": "Nutrition",
+          "endeca:auditInfo": {
+            "ecr:resourcePath": "\/pages\/sysco\/browse",
+            "ecr:innerPath": "secondaryContent[1]\/navigation[2]"
+          },
+          "name": "Nutrition Facts",
+          "ancestors": [],
+          "dimensionName": "Nutrition",
+          "multiSelect": false,
+          "refinements": [
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+8&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 7158,
+              "label": "KosherCertified",
+              "properties": {},
+              "multiSelect": false
+            }
+          ]
+        },
+        {
+          "@type": "RefinementMenu",
+          "moreLink": {
+            "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+            "contentPath": "\/browse",
+            "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0&Nrpp=100&Opco=010&Service=true&showMoreIds=3",
+            "siteRootPath": "\/pages",
+            "siteState": {
+              "@class": "com.endeca.infront.site.model.SiteState",
+              "contentPath": "\/browse",
+              "siteId": "\/sysco",
+              "properties": {}
+            },
+            "label": "Show More Refinements..."
+          },
+          "displayName": "Size",
+          "endeca:auditInfo": {
+            "ecr:resourcePath": "\/pages\/sysco\/browse",
+            "ecr:innerPath": "secondaryContent[1]\/navigation[3]"
+          },
+          "name": "Size",
+          "ancestors": [],
+          "dimensionName": "Size",
+          "multiSelect": false,
+          "refinements": [
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294955373&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "#",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294966338&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 258,
+              "label": "# 10",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294955974&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 18,
+              "label": "# 300",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294962014&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 5,
+              "label": "# 5",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294954898&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "#1",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294953672&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "#1 CAN",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294958040&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 4,
+              "label": "#1-25",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294966895&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 5065,
+              "label": "#10",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294949583&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 1,
+              "label": "#10 BG",
+              "properties": {},
+              "multiSelect": false
+            },
+            {
+              "@class": "com.endeca.infront.cartridge.model.Refinement",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0+4294958851&Nrpp=100&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "count": 2,
+              "label": "#10 CN",
+              "properties": {},
+              "multiSelect": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "mainContent": [
+    {
+      "@type": "SearchAdjustments",
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "mainContent[0]"
+      },
+      "name": "Search Adjustments"
+    },
+    {
+      "@type": "ContentSlotMain",
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "mainContent[1]"
+      },
+      "name": "Featured Items Display",
+      "contentPaths": [
+        "\/content\/Shared\/Featured Items"
+      ],
+      "templateTypes": [
+        "MainContent"
+      ],
+      "templateIds": [],
+      "ruleLimit": "1",
+      "contents": [
+        {
+          "@type": "HorizontalRecordSpotlight",
+          "records": [],
+          "endeca:auditInfo": {
+            "ecr:resourcePath": "content\/Shared\/Featured Items\/Default Towels"
+          },
+          "name": "Spotlight Records",
+          "title": "Featured Items"
+        }
+      ]
+    },
+    {
+      "@type": "ContentSlotMain",
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "mainContent[2]"
+      },
+      "name": "Search Results Container",
+      "contentPaths": [
+        "\/content\/Shared\/Extended Results Lists"
+      ],
+      "templateTypes": [
+        "MainContent"
+      ],
+      "templateIds": [],
+      "ruleLimit": "1",
+      "contents": [
+        {
+          "@type": "ExtendedResultsList",
+          "lastRecNum": 10,
+          "records": %RECORDS,
+          "searchPurchaseHistory": true,
+          "endeca:auditInfo": {
+            "ecr:resourcePath": "content\/Shared\/Extended Results Lists\/Default"
+          },
+          "precomputedSorts": [],
+          "optimizePurchaseHistory": true,
+          "recsPerPage": 100,
+          "pagingActionTemplate": {
+            "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+            "contentPath": "\/browse",
+            "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0&No=%7Boffset%7D&Nr=AND%28OR%28materialId%3A0785127%2CmaterialId%3A1254069%2CmaterialId%3A1283118%2CmaterialId%3A1358084%2CmaterialId%3A1491810%2CmaterialId%3A1845197%2CmaterialId%3A1972041%2CmaterialId%3A2198802%2CmaterialId%3A2442416%2CmaterialId%3A2795973%29%2CopCo%3A010%29&Nrpp=%7BrecordsPerPage%7D&Opco=010&Service=true",
+            "siteRootPath": "\/pages",
+            "siteState": {
+              "@class": "com.endeca.infront.site.model.SiteState",
+              "contentPath": "\/browse",
+              "siteId": "\/sysco",
+              "properties": {}
+            }
+          },
+          "totalNumRecs": 10,
+          "sortOptions": [
+            {
+              "@class": "com.endeca.infront.cartridge.model.SortOptionLabel",
+              "contentPath": "\/browse",
+              "navigationState": "?CustomerId=010_000026&MaterialIds=0785127%2C1254069%2C1283118%2C1358084%2C1491810%2C1845197%2C1972041%2C2198802%2C2442416%2C2795973&N=0&Nr=AND%28OR%28materialId%3A0785127%2CmaterialId%3A1254069%2CmaterialId%3A1283118%2CmaterialId%3A1358084%2CmaterialId%3A1491810%2CmaterialId%3A1845197%2CmaterialId%3A1972041%2CmaterialId%3A2198802%2CmaterialId%3A2442416%2CmaterialId%3A2795973%29%2CopCo%3A010%29&Nrpp=100&Ns=P_ID&Opco=010&Service=true",
+              "siteRootPath": "\/pages",
+              "siteState": {
+                "@class": "com.endeca.infront.site.model.SiteState",
+                "contentPath": "\/browse",
+                "siteId": "\/sysco",
+                "properties": {}
+              },
+              "label": "Record ID",
+              "selected": false
+            }
+          ],
+          "name": "Extended Results List",
+          "firstRecNum": 1
+        }
+      ]
+    },
+    {
+      "@type": "ContentSlotMain",
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "mainContent[3]"
+      },
+      "name": "Recommended Items",
+      "contentPaths": [
+        "\/content\/Shared\/Recommended items"
+      ],
+      "templateTypes": [
+        "MainContent"
+      ],
+      "templateIds": [],
+      "ruleLimit": "1",
+      "contents": []
+    },
+    {
+      "@type": "ContentSlotMain",
+      "endeca:auditInfo": {
+        "ecr:resourcePath": "\/pages\/sysco\/browse",
+        "ecr:innerPath": "mainContent[4]"
+      },
+      "name": "Related Items",
+      "contentPaths": [
+        "\/content\/Shared\/Related Items"
+      ],
+      "templateTypes": [
+        "MainContent"
+      ],
+      "templateIds": [],
+      "ruleLimit": "1",
+      "contents": []
+    }
+  ],
+  "endeca:siteRootPath": "\/pages",
+  "endeca:contentPath": "\/browse",
+  "endeca:siteState": {
+    "@class": "com.endeca.infront.site.model.SiteState",
+    "contentPath": "\/browse",
+    "siteId": "\/sysco",
+    "properties": {}
+  },
+  "endeca:assemblerRequestInformation": {
+    "@type": "AssemblerRequestEvent",
+    "endeca:contentPath": "\/browse",
+    "endeca:eneTime": 2,
+    "endeca:numRecords": 10,
+    "endeca:relRankStrategy": "nterms,maxfield,glom,first(considerFieldRanks),phrase(query_expansion,considerFieldRanks),static(syscoRelevancy,descending),static(P_ID,descending)",
+    "endeca:requestType": "N",
+    "endeca:siteRootPath": "\/pages",
+    "endeca:recordNames": [
+      "010_0785127",
+      "010_2795973",
+      "010_1845197",
+      "010_1491810",
+      "010_1972041",
+      "010_1283118",
+      "010_1358084",
+      "010_2198802",
+      "010_2442416",
+      "010_1254069"
+    ],
+    "endeca:spotlights": [
+      "Featured Items"
+    ],
+    "endeca:assemblyStartTimestamp": 1474387796172,
+    "endeca:sessionId": "F27FD60367122B4C0E1333C265058F3A",
+    "endeca:assemblyFinishTimestamp": 1474387796331
+  },
+  "canonicalLink": {
+    "@class": "com.endeca.infront.cartridge.model.NavigationAction",
+    "contentPath": "\/browse",
+    "navigationState": "?N=0",
+    "siteRootPath": "\/pages",
+    "siteState": {
+      "@class": "com.endeca.infront.site.model.SiteState",
+      "contentPath": "\/browse",
+      "siteId": "\/sysco",
+      "properties": {}
+    },
+    "label": ""
+  }
+}

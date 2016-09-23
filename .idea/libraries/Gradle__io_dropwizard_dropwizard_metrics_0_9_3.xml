@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.dropwizard:dropwizard-metrics:0.9.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.dropwizard/dropwizard-metrics/0.9.3/d3857f633d611d95c31a28ade777ebe66c5fbe94/dropwizard-metrics-0.9.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.dropwizard/dropwizard-metrics/0.9.3/c3ea8385bc7917360960279f2757ff042febdfa6/dropwizard-metrics-0.9.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

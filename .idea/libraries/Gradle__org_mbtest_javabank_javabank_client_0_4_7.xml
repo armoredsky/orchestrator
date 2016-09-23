@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.mbtest.javabank:javabank-client:0.4.7">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mbtest.javabank/javabank-client/0.4.7/95b29f370025929be57545577e7435389018e61/javabank-client-0.4.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mbtest.javabank/javabank-client/0.4.7/41f6ec1d0c05e3d20dda1d39791ec107ff0edc9/javabank-client-0.4.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

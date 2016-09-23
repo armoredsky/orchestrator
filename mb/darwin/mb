@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# allow running from any directory, including symlinks
+# portable but incomplete readlink -f behavior
+FILE=$0
+[ -L $FILE ] && FILE=`readlink $FILE`
+DIR=`dirname $FILE`
+$DIR/node-v5.10.1-darwin-x64/bin/node $DIR/mountebank/bin/mb "$@"

@@ -1,0 +1,39 @@
+client:
+  build: client/
+  ports:
+    - '4000:4000'
+  volumes:
+    - './client:/usr/src/app'
+api:
+  build: api/
+  environment:
+    - DATABASE=uom
+    - DATABASE_HOST=database
+    - IIB_URL=${IIB_URL}
+    - http_proxy=http://corppx.sysco.com:80
+    - https_proxy=http://corppx.sysco.com:80
+    - HTTP_PROXY=http://corppx.sysco.com:80
+    - HTTPS_PROXY=http://corppx.sysco.com:80
+  ports:
+    - '8080:8080'
+    - '8081:8081'
+  volumes:
+      - './api/src:/usr/src/app/src'
+  links:
+    - database
+migrations:
+  dockerfile: ./Dockerfile.migrations
+  build: api/
+  environment:
+    - DATABASE=uom
+    - DATABASE_USER=uom
+  links:
+    - database
+database:
+  dockerfile: ./Dockerfile.database
+  build: api/
+  ports:
+    - '5432:5432'
+  environment:
+    - POSTGRES_DB=uom
+    - POSTGRES_USER=uom
