@@ -2,9 +2,6 @@ package com.sysco.uomorchestrator
 
 import com.google.inject.Guice
 import com.google.inject.Injector
-import com.sysco.uomorchestrator.exceptionmapper.GatewayTimeoutExceptionMapper
-import com.sysco.uomorchestrator.exceptionmapper.IIBRequestFailedExceptionMapper
-import com.sysco.uomorchestrator.exceptionmapper.InvalidOrderExceptionMapper
 
 
 import com.sysco.uomorchestrator.resources.UOMLocalGatewayResource
@@ -38,9 +35,6 @@ class UomOrchestratorApplication extends Application<UomOrchestratorConfiguratio
         Injector injector = Guice.createInjector(new UomOrchestratorGuiceModule(environment, configuration))
 
         environment.jersey().register(injector.getInstance(UOMLocalGatewayResource))
-        environment.jersey().register(new GatewayTimeoutExceptionMapper())
-        environment.jersey().register(new IIBRequestFailedExceptionMapper())
-        environment.jersey().register(new InvalidOrderExceptionMapper())
 
         FilterRegistration.Dynamic cors = environment.servlets().addFilter("CORS", CrossOriginFilter)
 

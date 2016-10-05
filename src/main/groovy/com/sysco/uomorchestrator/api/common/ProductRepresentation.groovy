@@ -14,16 +14,5 @@ class ProductRepresentation {
     String size
     @JsonInclude(JsonInclude.Include.NON_NULL)
     String price
-
-    ProductRepresentation() { }
-
-    ProductRepresentation(Product product) {
-        this.id = product.id.toString()
-        this.name = product.name
-        this.supc = product.supc
-        this.brand = product.brand
-        this.pack = product.pack
-        this.size = product.size
-    }
 }
 
