@@ -4,9 +4,9 @@
     <output url="file://$MODULE_DIR$/../../build/classes/functionalTest" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../src/functionalTest">
-      <sourceFolder url="file://$MODULE_DIR$/../../src/functionalTest/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/functionalTest/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/functionalTest/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../src/functionalTest/groovy" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -8,5 +8,5 @@ import javax.validation.constraints.NotNull
 
 class UomOrchestratorConfiguration extends Configuration {
     @NotEmpty
-    String iibUrl
+    String orderServiceUrl
 }

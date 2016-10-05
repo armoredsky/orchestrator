@@ -1,10 +1,10 @@
 server:
   applicationConnectors:
     - type: http
-      port: ${PORT:-8080}
+      port: ${PORT:-8885}
   adminConnectors:
     - type: http
-      port: ${ADMIN_PORT:-8081}
+      port: ${ADMIN_PORT:-8886}
   rootPath: /api/
   requestLog:
       appenders:
@@ -15,20 +15,6 @@ server:
           archivedLogFilenamePattern: ./logs/access-%d.log
           archivedFileCount: 5
           timeZone: UTC
-dataSourceFactory:
-  driverClass: org.postgresql.Driver
-  user: uom
-  url: jdbc:postgresql://${DATABASE_HOST:-localhost}/${DATABASE:-uom}
-  properties:
-    charSet: UTF-8
-  maxWaitForConnection: 1s
-  validationQuery: "/* MyService Health Check */ SELECT 1"
-  validationQueryTimeout: 3s
-  minSize: 8
-  maxSize: 32
-  checkConnectionWhileIdle: false
-  evictionInterval: 10s
-  minIdleTime: 1 minute
 logging:
   appenders:
     - type: console
@@ -42,4 +28,4 @@ logging:
       archivedLogFilenamePattern: ./logs/app-%d.log.gz
       archivedFileCount: 5
       timeZone: UTC
-iibUrl: ${IIB_URL:-http://localhost:8001}
+orderServiceUrl: ${ORDER_SERVICE_URL:-http://localhost:8080}

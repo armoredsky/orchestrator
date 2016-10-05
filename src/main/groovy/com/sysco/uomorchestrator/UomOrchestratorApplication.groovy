@@ -5,10 +5,8 @@ import com.google.inject.Injector
 import com.sysco.uomorchestrator.exceptionmapper.GatewayTimeoutExceptionMapper
 import com.sysco.uomorchestrator.exceptionmapper.IIBRequestFailedExceptionMapper
 import com.sysco.uomorchestrator.exceptionmapper.InvalidOrderExceptionMapper
-import com.sysco.uomorchestrator.resources.AccountsResource
 
-import com.sysco.uomorchestrator.resources.OrdersResource
-import com.sysco.uomorchestrator.resources.ProductListsResource
+
 import com.sysco.uomorchestrator.resources.UOMLocalGatewayResource
 import io.dropwizard.Application
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor
@@ -39,10 +37,6 @@ class UomOrchestratorApplication extends Application<UomOrchestratorConfiguratio
     void run(UomOrchestratorConfiguration configuration, Environment environment) throws Exception {
         Injector injector = Guice.createInjector(new UomOrchestratorGuiceModule(environment, configuration))
 
-        environment.jersey().register(injector.getInstance(ProductListsResource))
-        environment.jersey().register(injector.getInstance(OrdersResource))
-        environment.jersey().register(injector.getInstance(AccountsResource))
-        environment.jersey().register(injector.getInstance(IIBGatewayResource))
         environment.jersey().register(injector.getInstance(UOMLocalGatewayResource))
         environment.jersey().register(new GatewayTimeoutExceptionMapper())
         environment.jersey().register(new IIBRequestFailedExceptionMapper())

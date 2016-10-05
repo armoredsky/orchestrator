@@ -1,33 +1,7 @@
-client:
-  image: registry.gitlab.com/uom-desktop/client:${CI_PIPELINE_ID}
-  ports:
-    - '4000:4000'
+orchestrator:
+  image: registry.gitlab.com/uom-desktop/orchestrator:${CI_PIPELINE_ID}
   environment:
-    - ENV=${ENV}
-api:
-  image: registry.gitlab.com/uom-desktop/api:${CI_PIPELINE_ID}
-  environment:
-    - DATABASE=uom
-    - DATABASE_HOST=database
-    - IIB_URL=${IIB_URL}
+    - ORDER_SERVICE_URL=${ORDER_SERVICE_URL}
   ports:
     - '8080:8080'
     - '8081:8081'
-  links:
-    - database
-migrations:
-  image: registry.gitlab.com/uom-desktop/migrations:${CI_PIPELINE_ID}
-  environment:
-    - DATABASE=uom
-    - DATABASE_USER=uom
-  links:
-    - database
-  labels:
-    io.rancher.container.start_once: 'true'
-database:
-  image: registry.gitlab.com/uom-desktop/database:${CI_PIPELINE_ID}
-  ports:
-    - '5432:5432'
-  environment:
-    - POSTGRES_DB=uom
-    - POSTGRES_USER=uom
