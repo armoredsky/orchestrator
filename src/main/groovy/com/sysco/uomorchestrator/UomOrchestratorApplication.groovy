@@ -4,7 +4,7 @@ import com.google.inject.Guice
 import com.google.inject.Injector
 
 
-import com.sysco.uomorchestrator.resources.UOMLocalGatewayResource
+import com.sysco.uomorchestrator.resources.UOMLocalOrchestratorResource
 import io.dropwizard.Application
 import io.dropwizard.configuration.EnvironmentVariableSubstitutor
 import io.dropwizard.configuration.SubstitutingSourceProvider
@@ -34,7 +34,7 @@ class UomOrchestratorApplication extends Application<UomOrchestratorConfiguratio
     void run(UomOrchestratorConfiguration configuration, Environment environment) throws Exception {
         Injector injector = Guice.createInjector(new UomOrchestratorGuiceModule(environment, configuration))
 
-        environment.jersey().register(injector.getInstance(UOMLocalGatewayResource))
+        environment.jersey().register(injector.getInstance(UOMLocalOrchestratorResource))
 
         FilterRegistration.Dynamic cors = environment.servlets().addFilter("CORS", CrossOriginFilter)
 

@@ -11,7 +11,7 @@ class OrderRepresentation {
     String submitDate
     String deliveryDate
     List<LineItemRepresentation> lineItems
-    UUID accountId
+    String accountId
 
     public OrderRepresentation() {}
 

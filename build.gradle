@@ -147,6 +147,7 @@ shadowJar {
 task runLocal << {
     javaexec {
         description 'Run the application locally for manual testing'
+        environment("ORDER_SERVICE_URL", "http://${getIpAddress()}:8080" )
         classpath = sourceSets.main.runtimeClasspath
         main = mainClassName
         args 'server', 'infrastructure/configuration.yml'

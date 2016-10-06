@@ -7,17 +7,13 @@ import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.core.Response
 
-@Path('/uomlocal-gateway')
+@Path('/uom-local')
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-class UOMLocalGatewayResource {
-
-    private final UOMLocalService uomLocalService
+class UOMLocalOrchestratorResource {
 
     @Inject
-    UOMLocalGatewayResource(UOMLocalService uomLocalService) {
-        this.uomLocalService = uomLocalService
-    }
+    private final UOMLocalService uomLocalService
 
     @GET
     @Path('/accounts')

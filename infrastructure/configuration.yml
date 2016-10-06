@@ -5,7 +5,7 @@ server:
   adminConnectors:
     - type: http
       port: ${ADMIN_PORT:-8886}
-  rootPath: /api/
+  rootPath: /orchestrator/
   requestLog:
       appenders:
         - type: file

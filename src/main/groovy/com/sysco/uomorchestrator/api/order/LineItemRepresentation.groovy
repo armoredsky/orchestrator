@@ -5,9 +5,8 @@ import groovy.transform.EqualsAndHashCode
 
 @EqualsAndHashCode
 class LineItemRepresentation {
-    UUID id
+    String id
     int quantity
     String price
     ProductRepresentation product
-
 }

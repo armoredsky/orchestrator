@@ -4,7 +4,7 @@ import groovy.transform.EqualsAndHashCode
 
 @EqualsAndHashCode
 class AccountRepresentation {
-    UUID id
+    String id
     String nextAvailableDeliveryDate
     String opCo
     String customerNumber

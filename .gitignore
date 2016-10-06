@@ -12,3 +12,4 @@ vars.sh
 client/coverage
 client/.nyc_output
 .DS_Store
+logs/
